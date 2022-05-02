@@ -89,9 +89,11 @@ window.addEventListener("load", () => {
         if( event.type != 'mouseout') {
             if( index != restore_process_array.length-1 ) {
                 restore_process_array.splice(index+1, restore_process_array.length-1);
+                redo.disabled = true;
             }
             restore_process_array.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
-            index += 1;
+            index ++;
+            undo.disabled =  false;
         }
     }
 
@@ -125,27 +127,27 @@ window.addEventListener("load", () => {
 
         restore_process_array = [canvas_original];
         index = 0;
+        undo.disabled = true;
+        redo.disabled = true;
     }
 
     //undo & redo
     function undo_last() {
-        if( index == 0 ) {
-            alert('No previous step!')
-        }
-        else {
             index--;
             ctx.putImageData(restore_process_array[index], 0, 0);
-        }
+            if( index === 0 ) {
+                undo.disabled = true;
+            }
+            redo.disabled = false;      
     }
 
     function redo_next() {
-        if( index == restore_process_array.length-1) {
-            alert('No further step!');
-        }
-        else {
         index++;
-        ctx.putImageData(restore_process_array[index], 0, 0);
+        ctx.putImageData(restore_process_array[index], 0, 0);    
+        if( index === restore_process_array.length-1) {
+            redo.disabled = true;
         }
+        undo.disabled = false;
     }
 
     function save_image_fcn() {
