@@ -271,7 +271,6 @@ window.addEventListener("load", () => {
             });
     }
 
-
     // paint bucket
     function matchStartColor(pixelPosition){
         let pixelRedVariable = paintBucketImageData.data[pixelPosition];
@@ -287,8 +286,6 @@ window.addEventListener("load", () => {
         paintBucketImageData.data[pixelPosition+2] = drawColorRGBArray[2];
         paintBucketImageData.data[pixelPosition+3] = 255;
     }
-
-    
 
     function fillColorFunction(startx, starty) {
         
@@ -316,13 +313,11 @@ window.addEventListener("load", () => {
             pixelPosition += canvas.width * 4;
             ++pixelYAxis;
 
-
             reachLeft = false;
             reachRight = false;
             while(pixelYAxis++ < canvas.height-1 && matchStartColor(pixelPosition)){
                 
                 colorPixel(pixelPosition);
-                ctx.putImageData(paintBucketImageData, 0, 0);
 
                 if(pixelXAxis > 0){
                     if(matchStartColor(pixelPosition - 4)){
@@ -354,6 +349,7 @@ window.addEventListener("load", () => {
                 pixelPosition += canvas.width * 4;
             }
         }
+        ctx.putImageData(paintBucketImageData, 0, 0);
     }
 
 
