@@ -5,30 +5,33 @@
         <meta name="viewport"  content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="shortcut icon" href="favicon" type="image/ico"/>
-        <link rel="stylesheet" href="./style.css" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="canvasStyle.css">
         <title>Canvas</title>        
     </head>
     <body>
         <div class="field">
-            <canvas id="canvas"></canvas>
-            <div class="Tools">
-                <button id="red_btn" class="color_btn" style="background: red; width: 55px; height: 21px;"> </button>
-                <button id="blue_btn" class="color_btn" style="background: blue; width: 55px; height: 21px;"> </button>
-                <button id="green_btn" class="color_btn" style="background: green; width: 55px; height: 21px;"> </button>
-                <button id="black_btn" class="color_btn" style="background: black; width: 55px; height: 21px;"> </button>
-                
-
-                <input id="color_scope" type="color">
-                Pt<input id="brush_size" type="range" min="1" max="100"><br>
-                <button id="eraser" style="background: white; width: 55px; height: 21px;">eraser</button>
-                
-                
-                <button id="undo" type="button" disabled="true">Undo</button>
-                <button id="redo" type="button" disabled="true">Redo</button>
-                <button id="reset" type="button">Reset</button>
-                <button id="save_image" type="button">Download</button>
-            </div>
             
+            <div class="tools">
+
+                <button id="undo" class="toolBtn" type="button" disabled="true" style="cursor: no-drop;"> <img src="./paintingProgramImage/undo_icon.png" class="toolImageAttribute">undo</button>
+                <button id="redo" class="toolBtn" type="button" disabled="true" style="cursor: no-drop;"> <img src="./paintingProgramImage/redo_icon.png" class="toolImageAttribute">redo</button>
+                <button id="reset" class="toolBtn" type="button"> <img src="./paintingProgramImage/reset_icon.png" class="toolImageAttribute">reset</button>
+                <button id="save_image" class="toolBtn" type="button"> <img src="./paintingProgramImage/download_icon.png" class="toolImageAttribute">download</button>
+                
+                <button id="pencil" name="tool" class="toolBtn selected"> <img id="pencilImage" src="./paintingProgramImage/pencil_icon.png" class="toolImageAttribute">pencil</button>
+                <button id="paintBucket" name="tool" class="toolBtn"> <img id="paintBucketImage" src="./paintingProgramImage/paint_bucket_icon.png" class="bucketImageAttribute">bucket</button>
+                <button id="eraser" class="toolBtn"> <img src="./paintingProgramImage/eraser_icon.png" class="toolImageAttribute" >eraser</button><br>
+
+                <button id="black_btn" class="colorBtn selectedColorBtn" style="background: #000000;"></button>
+                <button id="red_btn" class="colorBtn" style="background: #ff0000; "></button>
+                <button id="green_btn" class="colorBtn" style="background: #3CB043;"></button>
+                <button id="blue_btn" class="colorBtn" style="background: #0000ff;"></button>
+                
+                <input id="color_scope" class="inputColorScope" type="color">
+                <input id="brush_size" type="range" value="6" min="1" max="100">
+                Point Size:<input id="brushSizeBox" class="textBoxSetting" type="text">
+            </div>
+            <canvas id="canvas"></canvas>
         </div>
         
     </body>

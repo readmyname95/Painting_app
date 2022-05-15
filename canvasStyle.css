@@ -1,0 +1,117 @@
+/* field setting */ 
+.field {
+    max-width: 900px;
+    margin: auto;
+    font-family: "Arial";
+}
+
+.toolBtn {
+    background-color: white;
+    border: none;
+    width: 70px;
+    height: 70px;
+    top: 30%;
+    display: inline-block;
+    cursor: pointer;
+
+}
+
+/*tool attribute*/
+.toolImageAttribute {
+    width: 40px;
+    height: 40px;
+}
+
+.bucketImageAttribute {
+    width: 37px;
+    height: 37px;
+    margin: 1.5px 0px;
+    vertical-align: auto;
+}
+
+.toolImageAttribute a {
+    float: left;
+    width: 11%;
+    text-align: center;
+    padding: 6px 5px;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+/* Change color on hover */
+.tool a:hover {
+    background-color: #000;
+  }
+
+.btnhover a {
+    float: left;
+    width: 11%;
+    text-align: center;
+    padding: 6px 5px;
+    transition: all 0.5s ease;
+}
+
+.btnhover a:hover {
+    background-color: black;
+}
+ 
+/* Change color on selected icon */
+.selected {
+    border: 5px solid #444;
+}
+ 
+#canvas {
+    border: 3px solid #000000;
+}
+
+
+
+/* Color button setting */
+.selectedColorScope {
+    background-color: #F5E1C3;
+}
+.colorBtn {
+    border: none;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px ;
+    cursor: pointer;
+    width: 55px; 
+    height: 21px;
+    border-radius: 100%;
+    display: inline-block;
+}
+
+.selectedColorBtn {
+    border: 4px solid #F5E1C3;
+    margin: 0px 2px;
+}
+
+
+
+
+/* input[type = color] setting */
+.inputColorScope {
+    border: none;
+    margin: 3px 2px;
+    width: 55px; 
+    height: 40px;
+    vertical-align: top;
+    cursor: pointer;
+    border-radius: 20%;
+    
+}
+
+.inputColorScope::-webkit-color-swatch {
+    border-radius: 20%;
+}
+
+
+/* input [type=tex] setting */
+.textBoxSetting {
+    border: none;
+}
+
+
